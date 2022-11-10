@@ -22,10 +22,10 @@ libpng-dev \
 libpq-dev \
 libfreetype6-dev \
 libjpeg62-turbo-dev \
-&& docker-php-ext-install pdo_mysql \
 sockets \
-&& docker-php-ext-configure gd --with-freetype --with-jpeg \
-&& docker-php-ext-install -j$(nproc) gd
+&& docker-php-ext-install pdo_mysql \
+-j$(nproc) gd \
+&& docker-php-ext-configure gd --with-freetype --with-jpeg
 
 # Laravelで必要になるmodRewriteを有効化する
 RUN mv /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled
