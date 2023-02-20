@@ -22,6 +22,8 @@ libpng-dev \
 libpq-dev \
 libfreetype6-dev \
 libjpeg62-turbo-dev \
+zlib1g-dev \
+docker-php-ext-install zip \
 && docker-php-ext-install sockets \
 && docker-php-ext-install pdo_mysql \
 && docker-php-ext-install -j$(nproc) gd \
